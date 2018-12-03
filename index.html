@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Keycode Js</title>
+		<style>
+			body {
+				background-color: crimson;
+				color: rgb(235, 235, 235);
+				text-shadow: 0;
+			}
+
+			.container {
+				width: 50vw;
+				height: 70vh;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				position: absolute;
+				margin: auto;
+			}
+
+			#keycode {
+				text-align: center;
+				font-size: 15em;
+			}
+
+			#key {
+				text-align: center;
+				font-size: 4em;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div id="keycode"></div>
+			<div id="key"></div>
+		</div>
+		
+		<script>
+			document.onkeypress = function keyCodeFunc(e) {
+				e = e || window.event; 
+				let x = e.which || e.keyCode;
+				let y = String.fromCharCode(x);
+				if(x == 32) {
+					y = "Spacebar"
+				} else if(x == 13) {
+					y = "Return/Enter";
+				}
+				document.getElementById("keycode").innerHTML = x;
+				document.getElementById("key").innerHTML = y;
+			}
+		</script>
+	</body>
+</html>
